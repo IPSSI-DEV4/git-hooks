@@ -2,6 +2,10 @@
 
 See [Git Documentation](http://www.git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
 
-## Modif pour commit
-## Modif avec hook pre-message-commit
-## Modif avec hook commit-message
+# 6 of the most useful local hooks:
+    pre-commit
+    prepare-commit-msg
+    commit-msg
+    post-commit
+    post-checkout
+    pre-rebase
