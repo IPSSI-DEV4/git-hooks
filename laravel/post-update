@@ -1,10 +1,7 @@
 #!/bin/sh
 #
-# Post-update hook to prepare for deployment
+# Post-update hook to ensure dependencies are up to date
 #
-
-# Laravel maintenance down
-php artisan down
 
 # Update dependencies
 composer update
@@ -14,6 +11,3 @@ composer update
 # Build assets & cie
 # gulp deploy --production
 # grunt deploy --production
-
-# Laravel maintenance up
-php artisan up
