@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Post-update hook to prepare for deployment
+#
+
+# Laravel maintenance down
+php artisan down
+
+# Update dependencies
+composer update
+# npm update
+# bower update
+
+# Build assets & cie
+# gulp deploy --production
+# grunt deploy --production
+
+# Laravel maintenance up
+php artisan up
