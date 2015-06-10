@@ -3,20 +3,44 @@
 # Post-update hook to prepare for deployment
 #
 
+# Update the working tree after changes have been pushed here
+cd ..
+env -i git checkout -f
+
 # Laravel maintenance down
 php artisan down
 
 # Update dependencies
-composer update
-# npm update
-# bower update
+
+if [ -f composer.json ]; then
+    ## Install or update packages specified in the lock file
+    composer install
+fi
+
+if [ -f package.json ]; then
+    ## Install or update node packages
+    npm update
+fi
+
+if [ -f bower.json ]; then
+    ## install or update bower packages
+    bower update
+fi
 
 # Build assets & cie
-# gulp deploy --production
-# grunt deploy --production
+
+if [ -f gulpfile.json ]; then
+    # gulp deploy --production
+fi
+
+if [ -f Gruntfile ]; then
+    # grunt
+fi
 
 # Generate optimized class loader
 php artisan optimize
 
 # Laravel maintenance up
 php artisan up
+
+
