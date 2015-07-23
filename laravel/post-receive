@@ -40,6 +40,9 @@ fi
 # Generate optimized class loader
 php artisan optimize
 
+# Cache config files
+php artisan config:cache
+
 # Laravel maintenance up
 php artisan up
 
