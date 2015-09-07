@@ -19,12 +19,12 @@ fi
 
 if [ -f package.json ]; then
     ## Install or update node packages
-    npm update
+    npm install
 fi
 
 if [ -f bower.json ]; then
     ## install or update bower packages
-    bower update
+    bower install
 fi
 
 # Build assets & cie
