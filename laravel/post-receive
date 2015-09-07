@@ -13,17 +13,17 @@ php artisan down
 # Update dependencies
 
 if [ -f composer.json ]; then
-    ## Install or update packages specified in the lock file
+    ## Install packages specified in the lock file
     composer install
 fi
 
 if [ -f package.json ]; then
-    ## Install or update node packages
+    ## Install node packages
     npm install
 fi
 
 if [ -f bower.json ]; then
-    ## install or update bower packages
+    ## install bower packages
     bower install
 fi
 
